@@ -23,7 +23,7 @@ namespace Modal
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            var text = Texto.Text;
         }
     }
 }
