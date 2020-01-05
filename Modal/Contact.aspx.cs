@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
 
+
 namespace Modal
 {
     public partial class Contact : Page
@@ -23,7 +24,13 @@ namespace Modal
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            var text = Texto.Text;
+            var text = Convert.ToInt32(Texto.Text);
+            Consulta ver = new Consulta();
+            var res = ver.resulta(text);
+            segundo.Visible = true;
+            eldat.Text = res.nombre;
+            elresultado.Visible = true;
+            prime.Text = res.nombre;
         }
     }
 }

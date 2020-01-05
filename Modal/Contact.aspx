@@ -16,8 +16,11 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Launch demo modal
         </button>
-
-
+        <asp:UpdatePanel runat="server" ID="UpdatePanel1" RenderMode="Block">
+            <ContentTemplate>
+                <asp:Label ID="prime" Text="" runat="server" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </body>
 </html>
 <!-- Modal -->
@@ -32,12 +35,26 @@
       </div>
       <div class="modal-body">
         <asp:TextBox runat="server" id="Texto" >  </asp:TextBox>
+          
+          <label id="eldato"></label>
+          <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="Confirmar" />
+          <asp:UpdatePanel runat="server" ID="upAlgo" RenderMode="Block">
+              <ContentTemplate>
+                  <div id="elresultado" runat="server" visible="true">
+                      
+                      <asp:Button ID="Button3" runat="server" OnClick="Button1_Click" Text="Confirmar" />
+                  </div>
+                  <div id="segundo" runat="server" visible="false">
+                      <asp:Label ID="eldat" Text="text" runat="server" />
+                  </div>
+              </ContentTemplate>
+          </asp:UpdatePanel>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
         <p>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Confirmar" />
         </p>
       </div>
     </div>
