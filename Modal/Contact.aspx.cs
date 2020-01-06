@@ -32,5 +32,10 @@ namespace Modal
             elresultado.Visible = true;
             prime.Text = res.nombre;
         }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            LabelTextbox1.Text = TextBox1.Text;
+        }
     }
 }

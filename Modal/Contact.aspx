@@ -21,6 +21,12 @@
                 <asp:Label ID="prime" Text="" runat="server" />
             </ContentTemplate>
         </asp:UpdatePanel>
+        <asp:UpdatePanel runat="server" ID="UpdatePanel2" RenderMode="Block">
+            <ContentTemplate>
+                <asp:TextBox runat="server" id="TextBox1" OnTextChanged="TextBox1_TextChanged" AutopostBack="true" >  </asp:TextBox>
+                <asp:Label ID="LabelTextbox1" Text="" runat="server" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </body>
 </html>
 <!-- Modal -->
