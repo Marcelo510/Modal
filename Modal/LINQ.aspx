@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm3.aspx.cs" Inherits="Modal.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="LINQ.aspx.cs" Inherits="Modal.LINQ" %>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,10 +75,10 @@
             </div>
             <b>&nbsp;</b>
             <div class="col-xs-13 col-xs-offset-7">
-                <button class="ladda-button btn btn-primary" data-style="zoom-out" data-toggle="modal" data-target="#modalConceptos0">
-                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp; &nbsp;Conceptos
+                <button class="ladda-button btn btn-primary" data-style="zoom-out" data-toggle="modal">
+                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp; &nbsp;Consulta LINQ
                 </button>
-                <button class="ladda-button btn btn-primary" data-style="zoom-out" data-toggle="modal" data-target="#modalDomicilio0">
+                <button class="ladda-button btn btn-primary" data-style="zoom-out" data-toggle="modal" data-target="#<%var dat = Obtdat();%>">
                     <span class="glyphicon glyphicon-ok"></span>&nbsp; &nbsp;Domicilio
                 </button>
                 <button class="ladda-button btn btn-primary" data-style="zoom-out" data-toggle="modal" data-target="#modalApoderado0">
