@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/xlsx.core.min.js"></script>
+    <script src='/alasql.min.js'></script>
+
+    <title>Document</title>
+</head>
+<body>
+    
+<script>    
+    var person = [ 
+        { name: 'bill' , sex:'M', income:50000 },
+        { name: 'sara' , sex:'F', income:100000 },
+        { name: 'larry' , sex:'M', income:90000 },
+        { name: 'olga' , sex:'F', income:85000 },
+    ];
+
+    // Do the query
+    var res = alasql("SELECT * FROM ? person WHERE sex='F' AND income > 60000", [person]);
+    console.log(res);
+    </script>
+
+    
+</body>
+</html>

@@ -15,20 +15,7 @@
 
     <div class="panel-body">
         <div class="panel-group" id="accordion">
-            <div class="panel panel-info">
-                <!--DATOS PERSONA-->
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Datos Persona</a>
-                    </h3>
-
-                </div>
-
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel panel-info">
-                    </div>
-                </div>
-            </div>
+            
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">
@@ -71,6 +58,106 @@
                         <%}; %>
                     </div>
                 </div>
+            </div>
+            <div class="panel panel-info">
+                <!--DATOS PERSONA-->
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a class="accordion-toggle" id="aco2" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Datos Persona</a>
+                    </h3>
+                    
+                </div>
+
+                <div id="collapse1" class="panel-collapse collapse" >
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#aco2" href="#collapse10">Datos 2</a>
+                    <table class="table">
+                              <tbody>
+                                <tr>
+                                  <td>Mark</td>
+                                  <td>Otto</td>
+                                  <td>mdo</td>
+                                </tr>
+                                <tr>
+                                  <td>Jacob</td>
+                                  <td>Thornton</td>
+                                  <td>@fat</td>
+                                </tr>
+                                <tr>
+                                  <td>Larry</td>
+                                  <td>the Bird</td>
+                                  <td>twitter</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    <div id="collapse10" class="panel-collapse collapse">
+                        
+                            <table class="table">
+                              <tbody>
+                                <tr>
+                                  <td>Mark</td>
+                                  <td>Otto</td>
+                                  <td>mdo</td>
+                                </tr>
+                                <tr>
+                                  <td>Jacob</td>
+                                  <td>Thornton</td>
+                                  <td>@fat</td>
+                                </tr>
+                                <tr>
+                                  <td>Larry</td>
+                                  <td>the Bird</td>
+                                  <td>twitter</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                       
+                    </div>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#aco2" href="#collapse11">Datos 2</a>
+                    <table class="table">
+                              <tbody>
+                                <tr>
+                                  <td>Mark</td>
+                                  <td>Otto</td>
+                                  <td>mdo</td>
+                                </tr>
+                                <tr>
+                                  <td>Jacob</td>
+                                  <td>Thornton</td>
+                                  <td>@fat</td>
+                                </tr>
+                                <tr>
+                                  <td>Larry</td>
+                                  <td>the Bird</td>
+                                  <td>twitter</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    <div id="collapse11" class="panel-collapse collapse">
+                        
+                            <table class="table">
+                              <tbody>
+                                <tr>
+                                  <td>Mark</td>
+                                  <td>Otto</td>
+                                  <td>mdo</td>
+                                </tr>
+                                <tr>
+                                  <td>Jacob</td>
+                                  <td>Thornton</td>
+                                  <td>@fat</td>
+                                </tr>
+                                <tr>
+                                  <td>Larry</td>
+                                  <td>the Bird</td>
+                                  <td>twitter</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                       
+                    </div>
+                </div>
+
+
             </div>
             <b>&nbsp;</b>
             <div class="col-xs-13 col-xs-offset-7">

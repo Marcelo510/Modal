@@ -8,12 +8,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/alasql.min.js"></script>
+    <script src="js/xlsx.core.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div class="container">
     </div>
+    <script type="text/javascript">
 
+        var person = [
+            { name: 'bill', sex: 'M', income: 50000 },
+            { name: 'sara', sex: 'F', income: 100000 },
+            { name: 'larry', sex: 'M', income: 90000 },
+            { name: 'olga', sex: 'F', income: 85000 },
+        ];
+        //var datos = document.getElementById("etidato")
+        //// Do the query
+        //console.log(datos);
+        //var res = alasql("SELECT * FROM ? ", [person];
+        //console.log(res);
+
+        //var person = "";
+        //var person = document.getElementById('etijson');
+        <%--function carga() {
+            person = <%= Losdatos10() %>
+            
+        };--%>
+
+
+        function lafun() {
+
+            var res1 = alasql("SELECT * FROM ? where sex = 'M' ", [person]);
+            document.getElementById('ellabal').innerHTML = res1[0].name;
+            console.log(res1);
+        };
+
+        function lafun2() {
+            var periodo = 'periodo';
+            var res1 = alasql("SELECT sum(importe) as a FROM ? where periodo = '201910'", [person]);
+            document.getElementById('ellabal').innerHTML = res1[0].a;
+            console.log(res1);
+        };
+    </script>
+    <input value="Cargar" onclick="carga()" type="button">
+    <%--<input value="Cargar" runat="server" onclick="carga()" type="button">    --%>
+    <input value="La funcion" onclick="lafun()" type="button">
+    <input value="La funcion2" onclick="lafun2()" type="button">
+    <asp:Label runat="server" ID="ellabal">sfasdfasdf</asp:Label>
+    <%--<asp:Button Text="Boton ASP" runat="server" OnClick="ObtenerDatos"></asp:Button>--%>
     <div class="panel-body">
         <div class="panel-group" id="accordion">
             <div class="panel panel-info">
@@ -24,9 +67,58 @@
                     </h3>
 
                 </div>
-
+                
                 <div id="collapse1" class="panel-collapse collapse in">
                     <div class="panel panel-info">
+                        <div id="divCollapseBeneficios" runat="server" class="panel-body panel-collapse collapse in col-md-13">
+                            <div class="panel-body">
+                                <form id="form1" runat="server">
+                                <div class="col-md-12">
+                                    
+                                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+                                    
+                                    <asp:GridView ID="gv_Beneficios" UseAccessibleHeader="true" runat="server" AutoGenerateColumns="False" OnRowCommand="gv_Beneficios_RowCommand" OnSelectedIndexChanged="gv_Beneficios_SelectedIndexChanged" DataKeyNames="beneficio" CssClass="table table-striped table-bordered table-condensed">
+                                        <Columns>
+
+                                            <asp:ButtonField CommandName="Select" ControlStyle-CssClass="btn btn-info" ImageUrl="~/imagenes/glyphicon glyphicon-eye-open.png"
+                                                ButtonType="Button" Text="Detalle">
+                                                <ControlStyle CssClass="btn btn-default btn-xs"></ControlStyle>
+                                            </asp:ButtonField>
+                                            <asp:BoundField DataField="beneficio" HeaderText="beneficio" SortExpression="beneficio" />
+                                            <asp:BoundField DataField="importe" HeaderText="importe" SortExpression="importe" />
+                                           
+                                        </Columns>
+                                       
+                                    </asp:GridView>
+                                        
+                                    
+                                    <br />
+                                        
+                                    
+                                </div>
+
+                                <div class="col-md-12">
+                                    
+                                    <asp:GridView ID="GridView1" UseAccessibleHeader="true" runat="server" AutoGenerateColumns="False" OnRowCommand="gv_Beneficios_RowCommand" OnSelectedIndexChanged="gv_Beneficios_SelectedIndexChanged" DataKeyNames="beneficio" CssClass="table table-striped table-bordered table-condensed">
+                                        <Columns>
+
+                                            <asp:ButtonField CommandName="Select" ControlStyle-CssClass="btn btn-info" ImageUrl="~/imagenes/glyphicon glyphicon-eye-open.png"
+                                                ButtonType="Button" Text="Detalle">
+                                                <ControlStyle CssClass="btn btn-default btn-xs"></ControlStyle>
+                                            </asp:ButtonField>
+                                            <asp:BoundField DataField="beneficio" HeaderText="beneficio" SortExpression="beneficio" />
+                                            <asp:BoundField DataField="importe" HeaderText="importe" SortExpression="importe" />
+                                           
+                                        </Columns>
+                                       
+                                    </asp:GridView>
+                                        
+                                    
+                                </div>
+                                </form>
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,10 +152,10 @@
                                 <td>
                                     <asp:Label ID="lblCondEsp" runat="server"></asp:Label></td>
                                 <td>
-                                <%--<%var detmod = "#modalDetalle" + i.ToString();%>--%>
-                                <button type="button" class="ladda-button btn btn-primary" data-toggle="modal"  data-target="#modalDetalle0">
-                                    <span class="glyphicon glyphicon-eye-open"></span>
-                                &nbsp; &nbsp;Apoderado</button>
+                                    <%--<%var detmod = "#modalDetalle" + i.ToString();%>--%>
+                                    <button type="button" class="ladda-button btn btn-primary" data-toggle="modal" data-target="#modalDetalle0">
+                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                        &nbsp; &nbsp;Apoderado</button>
                                 </td>
                             </tr>
                         </table>
@@ -73,18 +165,33 @@
                     </div>
                 </div>
             </div>
+
+             <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse20">Datos Beneficio</a>
+                    </h3>
+
+                </div>
+
+                <div id="collapse20" class="panel-collapse collapse">
+                    <div class="panel panel-info">
+                        <asp:Literal ID="DynamicTable" runat="server"></asp:Literal>
+                    </div>
+                </div>
+            </div>
             <b>&nbsp;</b>
             <div class="col-xs-13 col-xs-offset-7">
                 <button class="ladda-button btn btn-primary" data-style="zoom-out" data-toggle="modal">
                     <span class="glyphicon glyphicon-eye-open"></span>&nbsp; &nbsp;Consulta LINQ
                 </button>
-                <button class="ladda-button btn btn-primary" data-style="zoom-out" data-toggle="modal" data-target="#<%var dat = Obtdat();%>">
+                <button class="ladda-button btn btn-primary" data-style="zoom-out" data-toggle="modal" data-target="#<%= Respuesta()%>">
                     <span class="glyphicon glyphicon-ok"></span>&nbsp; &nbsp;Domicilio
                 </button>
                 <button class="ladda-button btn btn-primary" data-style="zoom-out" data-toggle="modal" data-target="#modalApoderado0">
                     <span class="glyphicon glyphicon-asterisk"></span>&nbsp; &nbsp;Apoderado
                 </button>
-
+                <asp:Label ID="laetiqueta" runat="server"></asp:Label>
             </div>
         </div>
     </div>
@@ -118,7 +225,7 @@
             </div>
 
         </div>
-     </div>
+    </div>
     <div id="modalDetalle1" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -138,7 +245,7 @@
             </div>
 
         </div>
-     </div>
+    </div>
     <div id="modalDetalle2" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -158,7 +265,7 @@
             </div>
 
         </div>
-     </div>
+    </div>
     <div id="modalDetalle3" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -178,7 +285,7 @@
             </div>
 
         </div>
-     </div>
+    </div>
     <!-- FIN MODAL APODERADO -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
