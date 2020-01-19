@@ -131,6 +131,7 @@
     <Content Include="js\alasql.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\npm.js" />
     <Content Include="js\xlsx.core.min.js" />
@@ -143,6 +144,7 @@
     <Content Include="css\bootstrap.css.map" />
     <Content Include="css\bootstrap.min.css.map" />
     <Content Include="WebForm4.aspx" />
+    <Content Include="WebForm5.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -230,6 +232,7 @@
     </Compile>
     <Compile Include="T.cs" />
     <Compile Include="TablaPrueba.cs" />
+    <Compile Include="TablaPrueba1.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,9 +268,17 @@
     <Compile Include="WebForm4.aspx.designer.cs">
       <DependentUpon>WebForm4.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm5.aspx.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm5.aspx.designer.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Pruebas\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

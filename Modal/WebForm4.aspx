@@ -45,7 +45,7 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
-
+            
         </div>
     </div>
     <!-- FIN MODAL CONCEPTOS -->

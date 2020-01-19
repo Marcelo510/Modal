@@ -57,6 +57,7 @@
     <input value="La funcion2" onclick="lafun2()" type="button">
     <asp:Label runat="server" ID="ellabal">sfasdfasdf</asp:Label>
     <%--<asp:Button Text="Boton ASP" runat="server" OnClick="ObtenerDatos"></asp:Button>--%>
+    <form id="form2" runat="server">
     <div class="panel-body">
         <div class="panel-group" id="accordion">
             <div class="panel panel-info">
@@ -72,10 +73,11 @@
                     <div class="panel panel-info">
                         <div id="divCollapseBeneficios" runat="server" class="panel-body panel-collapse collapse in col-md-13">
                             <div class="panel-body">
-                                <form id="form1" runat="server">
+                                <%--<form id="form1" runat="server">--%>
                                 <div class="col-md-12">
                                     
                                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+                                    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
                                     
                                     <asp:GridView ID="gv_Beneficios" UseAccessibleHeader="true" runat="server" AutoGenerateColumns="False" OnRowCommand="gv_Beneficios_RowCommand" OnSelectedIndexChanged="gv_Beneficios_SelectedIndexChanged" DataKeyNames="beneficio" CssClass="table table-striped table-bordered table-condensed">
                                         <Columns>
@@ -115,7 +117,7 @@
                                         
                                     
                                 </div>
-                                </form>
+                                <%--</form>--%>
                                 
                             </div>
                         </div>
@@ -165,7 +167,7 @@
                     </div>
                 </div>
             </div>
-
+            
              <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">
@@ -193,9 +195,10 @@
                 </button>
                 <asp:Label ID="laetiqueta" runat="server"></asp:Label>
             </div>
+                 
         </div>
     </div>
-
+    </form >
     <script type="text/javascript">
         $(document).ready(function () {
             $(".btnBuscar").on('click', function () {

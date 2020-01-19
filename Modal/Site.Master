@@ -24,8 +24,8 @@
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
+                <%--<asp:ScriptReference Name="jquery" />--%>
+                <%--<asp:ScriptReference Name="bootstrap" />--%>
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -57,6 +57,7 @@
                         <li><a runat="server" href="~/WebForm3">WebForm3</a></li>
                         <li><a runat="server" href="~/WebForm4">WebForm4</a></li>
                         <li><a runat="server" href="~/LINQ">LINQ</a></li>
+                        <li><a runat="server" href="~/WebForm5">GridModal</a></li>
                     </ul>
                 </div>
             </div>
