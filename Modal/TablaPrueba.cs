@@ -14,6 +14,7 @@ namespace Modal
         public double importe { get; set; }
         public DateTime fecha { get; set; }
         public int codigo { get; set; }
+        public double importe2 { get; set; }
 
         public List<TablaPrueba1> detalle = new List<TablaPrueba1>();
 

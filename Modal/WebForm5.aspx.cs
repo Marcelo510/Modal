@@ -47,11 +47,12 @@ namespace Modal
                                 for (int a = 0; a < dt2.Rows.Count; a++)
                                 {
                                     TablaPrueba1 student1 = new TablaPrueba1();
-                                    student1.id = Convert.ToInt16(dt2.Rows[a]["id"]); 
+
+                                    student1.id = Convert.ToInt16(dt2.Rows[a]["id"]);
                                     student1.descri = dt2.Rows[a]["descri"].ToString();
-                                    
+
                                     studentList1.Add(student1);
-                                
+
 
 
 
@@ -77,14 +78,34 @@ namespace Modal
                                                         TablaPrueba student = new TablaPrueba();
                                                         student.id = i;
                                                         student.beneficio = dt.Rows[i]["beneficio"].ToString();
-                                                        student.importe = Convert.ToDouble(dt.Rows[i]["importe"]);
+                                                        if(Convert.ToInt16(dt.Rows[i]["codigo"]) == 15)
+                                                        {
+                                                            student.importe2 = Convert.ToDouble(dt.Rows[i]["importe"]);
+                                                        }
+                                                        else
+                                                        {
+                                                            student.importe = Convert.ToDouble(dt.Rows[i]["importe"]);
+                                                        }
+                                                        //student.importe = Convert.ToDouble(dt.Rows[i]["importe"]);
                                                         student.fecha = Convert.ToDateTime(dt.Rows[i]["fecha"]);
                                                         student.codigo = Convert.ToInt16(dt.Rows[i]["codigo"]);
-                                                        if(i == 2)
+                                                        if (i == 2)
                                                         {
-                                                            student.detalle.Add(student1);
+                                                            if(studentList1.Count > 0)
+                                                            {
+                                                                for (int x = 1; x == studentList1.Count; x++)
+                                                                {
+                                                                //    student.detalle[i].id = studentList1[x].id;
+                                                                //    student.detalle[i].descri = studentList1[x].descri;
+
+                                                                }
+                                                            }
+
+
+
+                                                            
                                                         }
-                                                        
+
 
                                                         studentList.Add(student);
                                                     }

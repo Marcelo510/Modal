@@ -104,7 +104,7 @@ namespace Modal
 
         protected void gv_Beneficios_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            string ver = "";
+            
         }
 
 
@@ -126,7 +126,7 @@ namespace Modal
             //var items = from p in result
             //            where result.Contains(p.ItemId)
             //            select p;
-            string a = "";
+            
         }
 
         public List<TablaPrueba> Obtdat()
